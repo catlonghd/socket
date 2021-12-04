@@ -43,6 +43,16 @@ def threaded_client(connection):
             label, num = k,v
             print("{:<8} {:<20}".format(label, num))
         print("-------------------------------------------")
+        #write users infor to file
+        infor = {
+            name: password
+        }
+
+        with open("test1.json", "r+") as file:
+            data = json.load(file)
+            data.update(infor)
+            file.seek(0)
+            json.dump(data, file)
         
         
     else:
@@ -57,16 +67,7 @@ def threaded_client(connection):
         break
     connection.close()
 
-    #write users infor to file
-    infor = {
-        name: password
-    }
-
-    with open("test1.json", "r+") as file:
-        data = json.load(file)
-        data.update(infor)
-        file.seek(0)
-        json.dump(data, file)
+    
         
     #with open("test1.json", "w") as outfile:
       #  json.dump(HashTable, outfile)
