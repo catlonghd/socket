@@ -67,12 +67,6 @@ def threaded_client(connection):
         break
     connection.close()
 
-    
-        
-    #with open("test1.json", "w") as outfile:
-      #  json.dump(HashTable, outfile)
-       # outfile.close()
-
 
 
 while True:
