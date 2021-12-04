@@ -18,7 +18,6 @@ except socket.error as e:
 print('Waitiing for a Connection..')
 ServerSocket.listen(5)
 
-#HashTable ={}
 with open("test1.json", "r") as openfile:
     # Reading from json file
     HashTable = json.load(openfile)
@@ -56,7 +55,7 @@ def threaded_client(connection):
         
         
     else:
-# If already existing user, check if the entered password is correct
+    # If already existing user, check if the entered password is correct
         if(HashTable[name] == password):
             connection.send(str.encode('Connection Successful')) # Response Code for Connected Client 
             print('Connected : ',name)
